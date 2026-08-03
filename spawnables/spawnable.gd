@@ -32,7 +32,7 @@ func change_speed(speed: float):
 	actual_speed = movement_speed * speed
 	animated_sprite_2d.speed_scale = speed
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	if active:
 		velocity.x = -actual_speed
 		move_and_slide()

@@ -7,7 +7,7 @@ class_name ParallaxBG
 func change_speed(speed: float):
 	actual_speed = movement_speed * speed 
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	position.x = position.x - actual_speed / scale.x * delta
 	if(position.x < -900.0):
 		Reset()
