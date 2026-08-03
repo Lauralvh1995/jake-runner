@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://ys5v1yfooxvn"]
+
+[ext_resource type="Script" uid="uid://durfnwmkermpj" path="res://hud.gd" id="1_37p78"]
+[ext_resource type="Texture2D" uid="uid://pqorybf4400r" path="res://graphics/Graphics/JakeLogoPixel48x48.png" id="2_64ctp"]
+[ext_resource type="Texture2D" uid="uid://c5cc47q2s2o4b" path="res://graphics/Graphics/screen_frame.png" id="3_8sq4i"]
+[ext_resource type="Texture2D" uid="uid://cl3hgkspqh75w" path="res://graphics/Graphics/scanlines.png" id="3_640wx"]
+[ext_resource type="Theme" uid="uid://byauxsibspj0l" path="res://graphics/Graphics/UITheme.tres" id="5_a2258"]
+[ext_resource type="Texture2D" uid="uid://ct8so0hknmdau" path="res://graphics/Graphics/EnergyBarBG.png" id="5_rftc2"]
+[ext_resource type="Texture2D" uid="uid://cpb7rhsguq5so" path="res://graphics/Graphics/EnergyBarFill.png" id="6_61f8s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64ctp"]
+atlas = ExtResource("2_64ctp")
+region = Rect2(0, 0, 240, 48)
+
+[node name="HUD" type="Control" unique_id=395229016]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_37p78")
+
+[node name="ScreenFrame" type="TextureRect" parent="." unique_id=1169651926]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -494.0
+offset_top = -287.0
+offset_right = 1606.0
+offset_bottom = 895.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8sq4i")
+
+[node name="Scanlines" type="TextureRect" parent="." unique_id=1356484138]
+modulate = Color(1, 1, 1, 0.49803922)
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1172.0
+offset_top = -668.0
+offset_right = 928.0
+offset_bottom = 514.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("3_640wx")
+
+[node name="HPHearts" type="TextureProgressBar" parent="." unique_id=2134759644]
+unique_name_in_owner = true
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 0
+offset_left = 70.0
+offset_top = 34.0
+offset_right = 310.0
+offset_bottom = 82.0
+step = 20.0
+value = 100.0
+texture_progress = SubResource("AtlasTexture_64ctp")
+
+[node name="Energy" type="TextureProgressBar" parent="." unique_id=1419718381]
+unique_name_in_owner = true
+texture_filter = 1
+texture_repeat = 2
+layout_mode = 0
+offset_left = 70.0
+offset_top = 82.0
+offset_right = 294.0
+offset_bottom = 114.0
+nine_patch_stretch = true
+texture_under = ExtResource("5_rftc2")
+texture_progress = ExtResource("6_61f8s")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=353179268]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 755.0
+offset_top = 35.0
+offset_right = 1089.0
+offset_bottom = 80.0
+theme = ExtResource("5_a2258")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "SCORE: 000000"
+vertical_alignment = 1
+
+[node name="CurrentSpeedLabel" type="Label" parent="." unique_id=778854273]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 95.0
+offset_top = 102.0
+offset_right = 135.0
+offset_bottom = 127.0
+
+[node name="GameOverPanel" type="Panel" parent="." unique_id=1271437603]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 256.0
+offset_top = 104.0
+offset_right = 856.0
+offset_bottom = 504.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_a2258")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel" unique_id=1185328618]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -145.0
+offset_right = 174.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverText" type="Label" parent="GameOverPanel/VBoxContainer" unique_id=411609082]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="GameOverScoreLabel" type="Label" parent="GameOverPanel/VBoxContainer" unique_id=1748169726]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Score:
+
+00000"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="SendScoreButton" type="Button" parent="GameOverPanel/VBoxContainer" unique_id=981459900]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("5_a2258")
+theme_override_font_sizes/font_size = 32
+text = "VERZEND SCORE"
+
+[connection signal="pressed" from="GameOverPanel/VBoxContainer/SendScoreButton" to="." method="_on_send_score_button_pressed"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpawnableStats" format=3 uid="uid://btaaj56uh17ah"]
+
+[ext_resource type="Script" uid="uid://go061rng8fge" path="res://spawnables/spawnable_stats.gd" id="1_3ji0t"]
+[ext_resource type="SpriteFrames" uid="uid://fkyqn16x5nkw" path="res://graphics/kenney_platformer-art-extended-enemies/Alien sprites/pickup.tres" id="2_xjbui"]
+
+[resource]
+script = ExtResource("1_3ji0t")
+score_bonus = 5
+energy = 15
+sprite = ExtResource("2_xjbui")
+metadata/_custom_type_script = "uid://go061rng8fge"

@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://5kb3txctn6ns"]
+
+[ext_resource type="Texture2D" uid="uid://cg1nfv5bix308" path="res://graphics/Graphics/Doggo.png" id="1_hy4ed"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhpd2"]
+atlas = ExtResource("1_hy4ed")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwgug"]
+atlas = ExtResource("1_hy4ed")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7baec"]
+atlas = ExtResource("1_hy4ed")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjxx0"]
+atlas = ExtResource("1_hy4ed")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhxp6"]
+atlas = ExtResource("1_hy4ed")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxt8g"]
+atlas = ExtResource("1_hy4ed")
+region = Rect2(320, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhpd2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwgug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7baec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjxx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhxp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxt8g")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]

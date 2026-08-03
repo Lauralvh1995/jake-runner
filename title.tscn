@@ -1,0 +1,300 @@
+[gd_scene format=3 uid="uid://pw0pir5lfi6y"]
+
+[ext_resource type="Script" uid="uid://b6fqu75yi5few" path="res://TitleScreen.gd" id="1_lx2ly"]
+[ext_resource type="Texture2D" uid="uid://b0nu58gncqhia" path="res://graphics/kenney_platformer-art-extended-enemies/sample.png" id="1_y7k74"]
+[ext_resource type="Texture2D" uid="uid://cl3hgkspqh75w" path="res://graphics/Graphics/scanlines.png" id="4_16uvt"]
+[ext_resource type="Theme" uid="uid://byauxsibspj0l" path="res://graphics/Graphics/UITheme.tres" id="5_gjryj"]
+[ext_resource type="Texture2D" uid="uid://cynnhr78q5u7q" path="res://graphics/kenney_input-prompts-pixel-1-bit/Tiles (White)/tile_0816.png" id="6_3ranr"]
+[ext_resource type="Texture2D" uid="uid://1rm2h1k5on5d" path="res://graphics/kenney_input-prompts-pixel-1-bit/Tiles (White)/tile_0120.png" id="7_dno37"]
+[ext_resource type="Texture2D" uid="uid://brdiwknau6xm" path="res://graphics/kenney_input-prompts-pixel-1-bit/Tiles (White)/tile_0169.png" id="8_7ueec"]
+[ext_resource type="Texture2D" uid="uid://ejndwkgg77kq" path="res://graphics/kenney_input-prompts-pixel-1-bit/Tiles (White)/tile_0122.png" id="9_2mtoi"]
+[ext_resource type="Texture2D" uid="uid://bhc0jo4gi3agl" path="res://graphics/kenney_input-prompts-pixel-1-bit/Tiles (White)/tile_0167.png" id="10_h4c81"]
+[ext_resource type="Texture2D" uid="uid://c5cc47q2s2o4b" path="res://graphics/Graphics/screen_frame.png" id="10_jil77"]
+[ext_resource type="Texture2D" uid="uid://by478hpavn7yu" path="res://graphics/kenney_input-prompts-pixel-1-bit/Tiles (White)/tile_0153.png" id="11_01k44"]
+[ext_resource type="Texture2D" uid="uid://766e2ltig7kf" path="res://graphics/kenney_input-prompts-pixel-1-bit/Tiles (White)/tile_0086.png" id="12_ynqpd"]
+[ext_resource type="Texture2D" uid="uid://bryhnfff3sg7m" path="res://graphics/kenney_input-prompts-pixel-1-bit/Tiles (White)/tile_0166.png" id="13_oyroy"]
+
+[node name="BG" type="TextureRect" unique_id=301696073]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y7k74")
+script = ExtResource("1_lx2ly")
+
+[node name="ScreenFrame" type="TextureRect" parent="." unique_id=1931791921]
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1050.0
+offset_top = -591.0
+offset_right = 1050.0
+offset_bottom = 591.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_jil77")
+
+[node name="Scanlines" type="TextureRect" parent="." unique_id=866718741]
+modulate = Color(1, 1, 1, 0.49803922)
+z_index = 3
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1050.0
+offset_top = -591.0
+offset_right = 1050.0
+offset_bottom = 591.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("4_16uvt")
+
+[node name="StartButtons" type="VBoxContainer" parent="." unique_id=1679520006]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -422.0
+offset_top = -300.0
+offset_right = -42.0
+offset_bottom = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("5_gjryj")
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Start" type="Button" parent="StartButtons" unique_id=956805060]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "START"
+autowrap_trim_flags = 0
+
+[node name="Instructions" type="Button" parent="StartButtons" unique_id=813793246]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "BESTURING
+"
+
+[node name="HighScore" type="Button" parent="StartButtons" unique_id=1277362620]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "HIGH SCORES"
+
+[node name="ControlsPanel" type="Panel" parent="." unique_id=319076410]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -200.0
+offset_right = 210.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_gjryj")
+
+[node name="CloseButton" type="TextureButton" parent="ControlsPanel" unique_id=1637736382]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_top = 2.0
+offset_bottom = 34.0
+grow_horizontal = 0
+texture_normal = ExtResource("6_3ranr")
+texture_pressed = ExtResource("6_3ranr")
+texture_hover = ExtResource("6_3ranr")
+texture_disabled = ExtResource("6_3ranr")
+texture_focused = ExtResource("6_3ranr")
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlsPanel" unique_id=1313812543]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 330.0
+offset_bottom = 394.0
+theme = ExtResource("5_gjryj")
+
+[node name="GoalsHeader" type="Label" parent="ControlsPanel/VBoxContainer" unique_id=5514197]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Doel van het spel"
+uppercase = true
+
+[node name="HelpJake" type="Label" parent="ControlsPanel/VBoxContainer" unique_id=1478151943]
+custom_minimum_size = Vector2(0, 94)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Help Jake met hardlopen. 
+Zorg ervoor dat hij 
+genoeg eet en drinkt 
+tijdens het rennen, maar 
+pas op voor ongezonde
+tussendoortjes!"
+justification_flags = 171
+text_overrun_behavior = 2
+uppercase = true
+
+[node name="ControlsHeader" type="Label" parent="ControlsPanel/VBoxContainer" unique_id=794433774]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Besturing"
+uppercase = true
+
+[node name="GridContainer" type="GridContainer" parent="ControlsPanel/VBoxContainer" unique_id=1503139290]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="SlowDown" type="Label" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=430278721]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Vertragen"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="A" type="TextureRect" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=638703220]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("7_dno37")
+
+[node name="Left" type="TextureRect" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=1250784485]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("8_7ueec")
+
+[node name="spacer" type="Control" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=925204246]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="SpeedUp" type="Label" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=438582536]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Versnellen"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="D" type="TextureRect" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=715831488]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("9_2mtoi")
+
+[node name="Right" type="TextureRect" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=1939091723]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("10_h4c81")
+
+[node name="spacer2" type="Control" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=503982479]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Jump" type="Label" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=337184897]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Springen"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Space" type="TextureRect" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=1795597486]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("11_01k44")
+
+[node name="W" type="TextureRect" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=1507922276]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("12_ynqpd")
+
+[node name="Up" type="TextureRect" parent="ControlsPanel/VBoxContainer/GridContainer" unique_id=1393273968]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("13_oyroy")
+
+[node name="HighScoresPanel" type="Panel" parent="." unique_id=1723863826]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -200.0
+offset_right = 210.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_gjryj")
+
+[node name="CloseButton" type="TextureButton" parent="HighScoresPanel" unique_id=1239601025]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_top = 2.0
+offset_bottom = 34.0
+grow_horizontal = 0
+texture_normal = ExtResource("6_3ranr")
+texture_pressed = ExtResource("6_3ranr")
+texture_hover = ExtResource("6_3ranr")
+texture_disabled = ExtResource("6_3ranr")
+texture_focused = ExtResource("6_3ranr")
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HighScoresPanel" unique_id=869279957]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 330.0
+offset_bottom = 394.0
+
+[node name="GoalsHeader" type="Label" parent="HighScoresPanel/VBoxContainer" unique_id=1313806596]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Highscores"
+uppercase = true
+
+[connection signal="pressed" from="StartButtons/Start" to="." method="StartGame"]
+[connection signal="pressed" from="StartButtons/Instructions" to="." method="ShowControls"]
+[connection signal="pressed" from="StartButtons/HighScore" to="." method="ShowHighscores"]
+[connection signal="pressed" from="ControlsPanel/CloseButton" to="." method="CloseControls"]
+[connection signal="pressed" from="HighScoresPanel/CloseButton" to="." method="CloseHighscores"]

@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dciqr6jbpv6f3"]
+
+[ext_resource type="Texture2D" uid="uid://dxeg8qy5sx1r4" path="res://graphics/Graphics/EnergyCan.png" id="1_08vlj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgo6v"]
+atlas = ExtResource("1_08vlj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15sgl"]
+atlas = ExtResource("1_08vlj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emlps"]
+atlas = ExtResource("1_08vlj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbw6c"]
+atlas = ExtResource("1_08vlj")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgo6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15sgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emlps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbw6c")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]

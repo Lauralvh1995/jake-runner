@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnableStats" format=3 uid="uid://dqg07ofkefb81"]
+
+[ext_resource type="Script" uid="uid://go061rng8fge" path="res://spawnables/spawnable_stats.gd" id="1_afcm1"]
+[ext_resource type="SpriteFrames" uid="uid://bhfvkheja1bw1" path="res://graphics/Graphics/WaterBottle.tres" id="2_tqc1k"]
+
+[resource]
+script = ExtResource("1_afcm1")
+score_bonus = 20
+sprite = ExtResource("2_tqc1k")
+metadata/_custom_type_script = "uid://go061rng8fge"

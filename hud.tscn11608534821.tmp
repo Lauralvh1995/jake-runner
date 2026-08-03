@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://ys5v1yfooxvn"]
+
+[ext_resource type="Script" uid="uid://durfnwmkermpj" path="res://hud.gd" id="1_37p78"]
+
+[sub_resource type="Gradient" id="Gradient_bah7m"]
+colors = PackedColorArray(1, 0.06999999, 0.06999999, 1, 1, 0.06999999, 0.06999999, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fv4w7"]
+gradient = SubResource("Gradient_bah7m")
+width = 300
+height = 50
+
+[sub_resource type="Gradient" id="Gradient_f5c0m"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.76, 0, 0.012666473, 1, 0.96, 0.69791996, 0.08639997, 1, 0.15660001, 0.87, 0.19226997, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b2ar6"]
+gradient = SubResource("Gradient_f5c0m")
+width = 300
+height = 50
+
+[node name="HUD" type="Control" unique_id=395229016]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_37p78")
+
+[node name="HPBar" type="TextureProgressBar" parent="." unique_id=999410451]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 70.0
+offset_top = 30.0
+offset_right = 370.0
+offset_bottom = 80.0
+tooltip_text = "HP"
+value = 100.0
+rounded = true
+texture_under = SubResource("GradientTexture2D_fv4w7")
+texture_progress = SubResource("GradientTexture2D_b2ar6")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=353179268]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 867.0
+offset_top = 34.0
+offset_right = 1079.0
+offset_bottom = 79.0
+theme_override_font_sizes/font_size = 32
+text = "Score: 000000"
+
+[node name="CurrentSpeedLabel" type="Label" parent="." unique_id=778854273]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = 50.0
+offset_bottom = 95.0
+
+[node name="GameOverPanel" type="Panel" parent="." unique_id=1271437603]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 256.0
+offset_top = 104.0
+offset_right = 856.0
+offset_bottom = 504.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel" unique_id=1185328618]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -145.0
+offset_right = 174.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverText" type="Label" parent="GameOverPanel/VBoxContainer" unique_id=411609082]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="GameOverScoreLabel" type="Label" parent="GameOverPanel/VBoxContainer" unique_id=1748169726]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Score:
+
+00000"
+horizontal_alignment = 1
+
+[node name="SendScoreButton" type="Button" parent="GameOverPanel/VBoxContainer" unique_id=981459900]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Verzend Score"
+
+[connection signal="pressed" from="GameOverPanel/VBoxContainer/SendScoreButton" to="." method="_on_send_score_button_pressed"]

@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://cmnivo3goqhhh"]
+
+[ext_resource type="PackedScene" uid="uid://bdvx5lqrmb5po" path="res://player/player.tscn" id="1_js7pq"]
+[ext_resource type="Texture2D" uid="uid://be2vikpfgd527" path="res://graphics/Ground.png" id="1_p1v5b"]
+[ext_resource type="Script" uid="uid://biwug7gm4k1wt" path="res://parallax_bg.gd" id="2_bah7m"]
+[ext_resource type="Texture2D" uid="uid://cxkdikewntq58" path="res://graphics/BG1.png" id="2_wygdx"]
+[ext_resource type="Texture2D" uid="uid://d0k7omoka7x7s" path="res://graphics/BG2.png" id="4_fvag4"]
+[ext_resource type="Texture2D" uid="uid://kivjo8o6qqs6" path="res://graphics/BG3.png" id="5_kva58"]
+[ext_resource type="Script" uid="uid://cbjda11t8eb2q" path="res://game_manager.gd" id="5_p1v5b"]
+[ext_resource type="Texture2D" uid="uid://b27mtbdkkf3cq" path="res://graphics/Sky.png" id="6_b2ar6"]
+[ext_resource type="Script" uid="uid://4hdd202065jy" path="res://object_spawner.gd" id="6_bah7m"]
+[ext_resource type="Texture2D" uid="uid://dd2hmtblgx0cx" path="res://graphics/BG4.png" id="6_ee7l0"]
+[ext_resource type="Texture2D" uid="uid://cuxqtpesh6sf6" path="res://graphics/Atmosphere.png" id="7_ee7l0"]
+[ext_resource type="PackedScene" uid="uid://drceqgs4ixguh" path="res://obstacles/obstacle.tscn" id="7_fv4w7"]
+[ext_resource type="Texture2D" uid="uid://badn7jxl26sb7" path="res://graphics/Clouds.png" id="7_gn8l5"]
+[ext_resource type="Texture2D" uid="uid://c4mdr7bn8o2qj" path="res://graphics/Sun.png" id="8_gn8l5"]
+[ext_resource type="PackedScene" uid="uid://ys5v1yfooxvn" path="res://hud.tscn" id="10_fvag4"]
+[ext_resource type="PackedScene" uid="uid://chrnkd7blhorg" path="res://obstacles/pickup.tscn" id="14_6w02q"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bcbcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bah7m"]
+size = Vector2(65, 628)
+
+[node name="World" type="Node2D" unique_id=1555627661]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1105794141]
+position = Vector2(575, 552)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1638977693]
+position = Vector2(0, 24)
+shape = SubResource("WorldBoundaryShape2D_bcbcq")
+
+[node name="Floor" type="Node2D" parent="Ground" unique_id=251157405]
+position = Vector2(-576, -375)
+scale = Vector2(2, 2)
+
+[node name="Ground" type="Sprite2D" parent="Ground/Floor" unique_id=900857252]
+texture = ExtResource("1_p1v5b")
+centered = false
+script = ExtResource("2_bah7m")
+
+[node name="Bg1" type="Sprite2D" parent="Ground/Floor/Ground" unique_id=1361451220]
+texture = ExtResource("2_wygdx")
+centered = false
+
+[node name="Ground2" type="Sprite2D" parent="Ground/Floor" unique_id=1815668348]
+position = Vector2(910, 0)
+texture = ExtResource("1_p1v5b")
+centered = false
+script = ExtResource("2_bah7m")
+
+[node name="Bg1" type="Sprite2D" parent="Ground/Floor/Ground2" unique_id=12971970]
+texture = ExtResource("2_wygdx")
+centered = false
+
+[node name="Ground3" type="Sprite2D" parent="Ground/Floor" unique_id=780541090]
+position = Vector2(1820, 0)
+texture = ExtResource("1_p1v5b")
+centered = false
+script = ExtResource("2_bah7m")
+
+[node name="Bg1" type="Sprite2D" parent="Ground/Floor/Ground3" unique_id=851769853]
+texture = ExtResource("2_wygdx")
+centered = false
+
+[node name="BG Layer 2" type="Node2D" parent="Ground" unique_id=1152324612]
+position = Vector2(-576, -375)
+scale = Vector2(2, 2)
+
+[node name="BG 2_1" type="Sprite2D" parent="Ground/BG Layer 2" unique_id=1479021389]
+z_index = -1
+texture = ExtResource("4_fvag4")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 100.0
+actual_speed = 100.0
+
+[node name="BG 2_2" type="Sprite2D" parent="Ground/BG Layer 2" unique_id=20767277]
+z_index = -1
+position = Vector2(910, 0)
+texture = ExtResource("4_fvag4")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 100.0
+actual_speed = 100.0
+
+[node name="BG 2_3" type="Sprite2D" parent="Ground/BG Layer 2" unique_id=689654263]
+z_index = -1
+position = Vector2(1820, 0)
+texture = ExtResource("4_fvag4")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 100.0
+actual_speed = 100.0
+
+[node name="BG Layer 3" type="Node2D" parent="Ground" unique_id=67914024]
+position = Vector2(-576, -375)
+scale = Vector2(2, 2)
+
+[node name="BG 3_1" type="Sprite2D" parent="Ground/BG Layer 3" unique_id=1226491201]
+z_index = -2
+texture = ExtResource("5_kva58")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 50.0
+actual_speed = 50.0
+
+[node name="BG 3_2" type="Sprite2D" parent="Ground/BG Layer 3" unique_id=1283083533]
+z_index = -2
+position = Vector2(910, 0)
+texture = ExtResource("5_kva58")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 50.0
+actual_speed = 50.0
+
+[node name="BG 3_3" type="Sprite2D" parent="Ground/BG Layer 3" unique_id=1029057688]
+z_index = -2
+position = Vector2(1820, 0)
+texture = ExtResource("5_kva58")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 50.0
+actual_speed = 50.0
+
+[node name="BG Layer 4" type="Node2D" parent="Ground" unique_id=563809036]
+position = Vector2(-576, -246)
+scale = Vector2(2, 2)
+
+[node name="BG 4_1" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=1711822168]
+z_index = -4
+position = Vector2(0, -34)
+texture = ExtResource("6_ee7l0")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 25.0
+actual_speed = 25.0
+
+[node name="BG 4_2" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=856217600]
+z_index = -4
+position = Vector2(910, -34)
+texture = ExtResource("6_ee7l0")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 25.0
+actual_speed = 25.0
+
+[node name="BG 4_3" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=1374436702]
+z_index = -4
+position = Vector2(1820, -34)
+texture = ExtResource("6_ee7l0")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 25.0
+actual_speed = 25.0
+
+[node name="BG Clouds 1" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=2136813794]
+z_index = -4
+position = Vector2(0, -125)
+texture = ExtResource("7_gn8l5")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 10.0
+actual_speed = 10.0
+
+[node name="BG Clouds 2" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=748819461]
+z_index = -4
+position = Vector2(910, -125)
+texture = ExtResource("7_gn8l5")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 10.0
+actual_speed = 10.0
+
+[node name="BG Clouds 3" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=471783058]
+z_index = -4
+position = Vector2(1820, -125)
+texture = ExtResource("7_gn8l5")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 10.0
+actual_speed = 10.0
+
+[node name="Sky" type="Sprite2D" parent="Ground" unique_id=1319775022]
+z_index = -6
+position = Vector2(-910, -552)
+scale = Vector2(2, 2.5)
+texture = ExtResource("6_b2ar6")
+centered = false
+
+[node name="Atmosphere" type="Sprite2D" parent="Ground" unique_id=698301324]
+z_index = -6
+position = Vector2(-910, -552)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ee7l0")
+centered = false
+
+[node name="Sun" type="Sprite2D" parent="Ground" unique_id=1860368529]
+z_index = -6
+position = Vector2(-910, -552)
+scale = Vector2(2, 2)
+texture = ExtResource("8_gn8l5")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1714105430]
+position = Vector2(576, 324)
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
+
+[node name="GameManager" type="Node" parent="." unique_id=551095823 node_paths=PackedStringArray("parallax_bg_sprites")]
+script = ExtResource("5_p1v5b")
+speed_delta = 1.5
+master_scale = 2.0
+parallax_bg_sprites = [NodePath("../Ground/Floor/Ground"), NodePath("../Ground/Floor/Ground2"), NodePath("../Ground/Floor/Ground3"), NodePath("../Ground/BG Layer 2/BG 2_1"), NodePath("../Ground/BG Layer 2/BG 2_2"), NodePath("../Ground/BG Layer 2/BG 2_3"), NodePath("../Ground/BG Layer 3/BG 3_1"), NodePath("../Ground/BG Layer 3/BG 3_2"), NodePath("../Ground/BG Layer 3/BG 3_3"), NodePath("../Ground/BG Layer 4/BG 4_1"), NodePath("../Ground/BG Layer 4/BG 4_2"), NodePath("../Ground/BG Layer 4/BG 4_3"), NodePath("../Ground/BG Layer 4/BG Clouds 1"), NodePath("../Ground/BG Layer 4/BG Clouds 2"), NodePath("../Ground/BG Layer 4/BG Clouds 3")]
+
+[node name="ObjectSpawner" type="Node2D" parent="GameManager" unique_id=608752736 node_paths=PackedStringArray("game_manager")]
+position = Vector2(1242, 531)
+script = ExtResource("6_bah7m")
+game_manager = NodePath("..")
+object_prefabs = Array[PackedScene]([ExtResource("7_fv4w7"), ExtResource("7_fv4w7"), ExtResource("7_fv4w7"), ExtResource("14_6w02q"), ExtResource("14_6w02q"), ExtResource("14_6w02q")])
+
+[node name="SpawnTimer" type="Timer" parent="GameManager/ObjectSpawner" unique_id=241757932]
+wait_time = 1.5
+autostart = true
+
+[node name="Player" parent="." unique_id=1816060458 instance=ExtResource("1_js7pq")]
+position = Vector2(183, 149)
+time_to_jump_apex = 0.4
+time_jump_descent = 0.3
+
+[node name="ObstacleDeactivationZone" type="Area2D" parent="." unique_id=682644153]
+position = Vector2(-50, 0)
+collision_layer = 9
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleDeactivationZone" unique_id=781899238]
+position = Vector2(-32, 281)
+shape = SubResource("RectangleShape2D_bah7m")
+
+[node name="HUD" parent="." unique_id=395229016 instance=ExtResource("10_fvag4")]
+
+[connection signal="energy_changed" from="GameManager" to="HUD" method="_on_game_manager_energy_changed"]
+[connection signal="game_is_over" from="GameManager" to="HUD" method="show_game_over_screen"]
+[connection signal="game_speed_changed" from="GameManager" to="Player" method="change_animation_speed"]
+[connection signal="game_speed_changed" from="GameManager" to="HUD" method="_on_game_manager_game_speed_changed"]
+[connection signal="update_game_score" from="GameManager" to="HUD" method="_on_game_manager_update_game_score"]
+[connection signal="timeout" from="GameManager/ObjectSpawner/SpawnTimer" to="GameManager/ObjectSpawner" method="_spawn"]
+[connection signal="hp_loss" from="Player" to="HUD" method="_on_player_hp_loss"]
+[connection signal="kill" from="Player" to="GameManager" method="_on_player_kill"]
+[connection signal="pickup" from="Player" to="GameManager" method="_on_player_pickup"]

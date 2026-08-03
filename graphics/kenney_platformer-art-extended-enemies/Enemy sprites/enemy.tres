@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://fuv1mo7id5yk"]
+
+[ext_resource type="Texture2D" uid="uid://bfnssdyfvqlwd" path="res://graphics/kenney_platformer-art-extended-enemies/Enemy sprites/ghost.png" id="1_pfkv3"]
+[ext_resource type="Texture2D" uid="uid://deq5vwy1cd3ny" path="res://graphics/kenney_platformer-art-extended-enemies/Enemy sprites/ghost_normal.png" id="2_xbl2j"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pfkv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xbl2j")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

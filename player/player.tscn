@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bdvx5lqrmb5po"]
+
+[ext_resource type="Script" uid="uid://2pt6nyb3bov8" path="res://player/player.gd" id="1_onrkg"]
+[ext_resource type="SpriteFrames" uid="uid://c6vtjhvgdv58u" path="res://graphics/Graphics/JakeRun.tres" id="2_rkbax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2dftf"]
+size = Vector2(64, 64)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rkbax"]
+radius = 32.0
+height = 64.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1816060458]
+scale = Vector2(2, 2)
+collision_layer = 2
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789757608]
+shape = SubResource("RectangleShape2D_2dftf")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1572504767]
+z_index = 1
+sprite_frames = ExtResource("2_rkbax")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Label" type="Label" parent="." unique_id=965069016]
+visible = false
+z_index = 2
+offset_left = 76.0
+offset_top = 1.0
+offset_right = 116.0
+offset_bottom = 24.0
+
+[node name="KillBox" type="Area2D" parent="." unique_id=1819322432]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox" unique_id=1861103719]
+shape = SubResource("CapsuleShape2D_rkbax")
+
+[connection signal="body_entered" from="KillBox" to="." method="hit_object"]

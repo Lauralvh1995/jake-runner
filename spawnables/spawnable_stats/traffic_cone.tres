@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SpawnableStats" format=3 uid="uid://hf2x8yhrcyqt"]
+
+[ext_resource type="Script" uid="uid://go061rng8fge" path="res://spawnables/spawnable_stats.gd" id="1_2gldu"]
+[ext_resource type="SpriteFrames" uid="uid://fuv1mo7id5yk" path="res://graphics/kenney_platformer-art-extended-enemies/Enemy sprites/enemy.tres" id="2_phufn"]
+
+[resource]
+script = ExtResource("1_2gldu")
+score_bonus = 0
+energy = 0
+obstacle = true
+sprite = ExtResource("2_phufn")
+obstacle_height = 2
+metadata/_custom_type_script = "uid://go061rng8fge"

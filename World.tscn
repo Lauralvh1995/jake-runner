@@ -1,0 +1,323 @@
+[gd_scene format=3 uid="uid://cmnivo3goqhhh"]
+
+[ext_resource type="PackedScene" uid="uid://bdvx5lqrmb5po" path="res://player/player.tscn" id="1_js7pq"]
+[ext_resource type="Texture2D" uid="uid://be2vikpfgd527" path="res://graphics/Graphics/Ground.png" id="1_p1v5b"]
+[ext_resource type="Texture2D" uid="uid://c1jdoyxjxy4ag" path="res://graphics/Graphics/GroundFill.png" id="1_ydbc3"]
+[ext_resource type="Script" uid="uid://biwug7gm4k1wt" path="res://parallax_bg.gd" id="2_bah7m"]
+[ext_resource type="Texture2D" uid="uid://cxkdikewntq58" path="res://graphics/Graphics/BG1.png" id="2_wygdx"]
+[ext_resource type="Texture2D" uid="uid://d0k7omoka7x7s" path="res://graphics/Graphics/BG2.png" id="4_fvag4"]
+[ext_resource type="Texture2D" uid="uid://kivjo8o6qqs6" path="res://graphics/Graphics/BG3.png" id="5_kva58"]
+[ext_resource type="Script" uid="uid://cbjda11t8eb2q" path="res://game_manager.gd" id="5_p1v5b"]
+[ext_resource type="Texture2D" uid="uid://b27mtbdkkf3cq" path="res://graphics/Graphics/Sky.png" id="6_b2ar6"]
+[ext_resource type="Script" uid="uid://4hdd202065jy" path="res://object_spawner.gd" id="6_bah7m"]
+[ext_resource type="Texture2D" uid="uid://dd2hmtblgx0cx" path="res://graphics/Graphics/BG4.png" id="6_ee7l0"]
+[ext_resource type="Texture2D" uid="uid://cuxqtpesh6sf6" path="res://graphics/Graphics/Atmosphere.png" id="7_ee7l0"]
+[ext_resource type="Texture2D" uid="uid://badn7jxl26sb7" path="res://graphics/Graphics/Clouds.png" id="7_gn8l5"]
+[ext_resource type="Texture2D" uid="uid://c4mdr7bn8o2qj" path="res://graphics/Graphics/Sun.png" id="8_gn8l5"]
+[ext_resource type="PackedScene" uid="uid://ys5v1yfooxvn" path="res://hud.tscn" id="10_fvag4"]
+[ext_resource type="Script" uid="uid://go061rng8fge" path="res://spawnables/spawnable_stats.gd" id="13_sjtuv"]
+[ext_resource type="Resource" uid="uid://dfnqxlu04tiok" path="res://spawnables/spawnable_stats/apple.tres" id="14_5j71u"]
+[ext_resource type="Resource" uid="uid://623guuwlu1qs" path="res://spawnables/spawnable_stats/candy.tres" id="15_jyqkj"]
+[ext_resource type="PackedScene" uid="uid://drceqgs4ixguh" path="res://spawnables/spawnable.tscn" id="16_0to5b"]
+[ext_resource type="Resource" uid="uid://dm8jalwp2yipl" path="res://spawnables/spawnable_stats/dog.tres" id="16_ydbc3"]
+[ext_resource type="Resource" uid="uid://bpqld7fdu3rnu" path="res://spawnables/spawnable_stats/energy_drink.tres" id="17_aj1ai"]
+[ext_resource type="Resource" uid="uid://btaaj56uh17ah" path="res://spawnables/spawnable_stats/protein_bar.tres" id="18_d7dfr"]
+[ext_resource type="Resource" uid="uid://dqg07ofkefb81" path="res://spawnables/spawnable_stats/water_bottle.tres" id="19_c2gv2"]
+[ext_resource type="Resource" uid="uid://ddvrod7bneb7w" path="res://spawnables/spawnable_stats/bird.tres" id="20_jyqkj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bcbcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bah7m"]
+size = Vector2(65, 628)
+
+[node name="World" type="Node2D" unique_id=1555627661]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1105794141]
+position = Vector2(575, 552)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1638977693]
+position = Vector2(0, 24)
+shape = SubResource("WorldBoundaryShape2D_bcbcq")
+
+[node name="Floor" type="Node2D" parent="Ground" unique_id=251157405]
+position = Vector2(-576, -375)
+scale = Vector2(2, 2)
+
+[node name="GroundCheat" type="Sprite2D" parent="Ground/Floor" unique_id=1352964643]
+z_index = 1
+z_as_relative = false
+texture = ExtResource("1_ydbc3")
+centered = false
+
+[node name="Ground" type="Sprite2D" parent="Ground/Floor" unique_id=900857252]
+z_index = 2
+z_as_relative = false
+texture = ExtResource("1_p1v5b")
+centered = false
+script = ExtResource("2_bah7m")
+
+[node name="Ground2" type="Sprite2D" parent="Ground/Floor" unique_id=1815668348]
+z_index = 2
+z_as_relative = false
+position = Vector2(910, 0)
+texture = ExtResource("1_p1v5b")
+centered = false
+script = ExtResource("2_bah7m")
+
+[node name="Ground3" type="Sprite2D" parent="Ground/Floor" unique_id=780541090]
+z_index = 2
+z_as_relative = false
+position = Vector2(1820, 0)
+texture = ExtResource("1_p1v5b")
+centered = false
+script = ExtResource("2_bah7m")
+
+[node name="BG Layer 2" type="Node2D" parent="Ground" unique_id=1152324612]
+position = Vector2(-576, -375)
+scale = Vector2(2, 2)
+
+[node name="BG 2_1" type="Sprite2D" parent="Ground/BG Layer 2" unique_id=1479021389]
+z_index = -1
+z_as_relative = false
+texture = ExtResource("4_fvag4")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 100.0
+actual_speed = 100.0
+
+[node name="BG 2_2" type="Sprite2D" parent="Ground/BG Layer 2" unique_id=20767277]
+z_index = -1
+z_as_relative = false
+position = Vector2(910, 0)
+texture = ExtResource("4_fvag4")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 100.0
+actual_speed = 100.0
+
+[node name="BG 2_3" type="Sprite2D" parent="Ground/BG Layer 2" unique_id=689654263]
+z_index = -1
+z_as_relative = false
+position = Vector2(1820, 0)
+texture = ExtResource("4_fvag4")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 100.0
+actual_speed = 100.0
+
+[node name="BG Layer 3" type="Node2D" parent="Ground" unique_id=67914024]
+position = Vector2(-576, -375)
+scale = Vector2(2, 2)
+
+[node name="BG 3_1" type="Sprite2D" parent="Ground/BG Layer 3" unique_id=1226491201]
+z_index = -2
+z_as_relative = false
+texture = ExtResource("5_kva58")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 50.0
+actual_speed = 50.0
+
+[node name="BG 3_2" type="Sprite2D" parent="Ground/BG Layer 3" unique_id=1283083533]
+z_index = -2
+z_as_relative = false
+position = Vector2(910, 0)
+texture = ExtResource("5_kva58")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 50.0
+actual_speed = 50.0
+
+[node name="BG 3_3" type="Sprite2D" parent="Ground/BG Layer 3" unique_id=1029057688]
+z_index = -2
+z_as_relative = false
+position = Vector2(1820, 0)
+texture = ExtResource("5_kva58")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 50.0
+actual_speed = 50.0
+
+[node name="BG Layer 4" type="Node2D" parent="Ground" unique_id=563809036]
+position = Vector2(-576, -246)
+scale = Vector2(2, 2)
+
+[node name="BG 4_1" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=1711822168]
+z_index = -4
+z_as_relative = false
+position = Vector2(0, -34)
+texture = ExtResource("6_ee7l0")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 25.0
+actual_speed = 25.0
+
+[node name="BG 4_2" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=856217600]
+z_index = -4
+z_as_relative = false
+position = Vector2(910, -34)
+texture = ExtResource("6_ee7l0")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 25.0
+actual_speed = 25.0
+
+[node name="BG 4_3" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=1374436702]
+z_index = -4
+z_as_relative = false
+position = Vector2(1820, -34)
+texture = ExtResource("6_ee7l0")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 25.0
+actual_speed = 25.0
+
+[node name="BG Clouds 1" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=2136813794]
+z_index = -4
+z_as_relative = false
+position = Vector2(0, -125)
+texture = ExtResource("7_gn8l5")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 10.0
+actual_speed = 10.0
+
+[node name="BG Clouds 2" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=748819461]
+z_index = -4
+z_as_relative = false
+position = Vector2(910, -125)
+texture = ExtResource("7_gn8l5")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 10.0
+actual_speed = 10.0
+
+[node name="BG Clouds 3" type="Sprite2D" parent="Ground/BG Layer 4" unique_id=471783058]
+z_index = -4
+z_as_relative = false
+position = Vector2(1820, -125)
+texture = ExtResource("7_gn8l5")
+centered = false
+script = ExtResource("2_bah7m")
+movement_speed = 10.0
+actual_speed = 10.0
+
+[node name="Foreground" type="Node2D" parent="Ground" unique_id=279292380]
+position = Vector2(-576, -375)
+scale = Vector2(2, 2)
+
+[node name="FG1" type="Sprite2D" parent="Ground/Foreground" unique_id=1361451220]
+z_as_relative = false
+texture = ExtResource("2_wygdx")
+centered = false
+script = ExtResource("2_bah7m")
+
+[node name="FG2" type="Sprite2D" parent="Ground/Foreground" unique_id=12971970]
+z_as_relative = false
+position = Vector2(910, 0)
+texture = ExtResource("2_wygdx")
+centered = false
+script = ExtResource("2_bah7m")
+
+[node name="FG3" type="Sprite2D" parent="Ground/Foreground" unique_id=851769853]
+z_as_relative = false
+position = Vector2(1820, 0)
+texture = ExtResource("2_wygdx")
+centered = false
+script = ExtResource("2_bah7m")
+
+[node name="Sky" type="Sprite2D" parent="Ground" unique_id=1319775022]
+z_index = -6
+z_as_relative = false
+position = Vector2(-910, -552)
+scale = Vector2(2, 2.5)
+texture = ExtResource("6_b2ar6")
+centered = false
+
+[node name="Atmosphere" type="Sprite2D" parent="Ground" unique_id=698301324]
+z_index = -6
+z_as_relative = false
+position = Vector2(-910, -552)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ee7l0")
+centered = false
+
+[node name="Sun" type="Sprite2D" parent="Ground" unique_id=1860368529]
+z_index = -6
+z_as_relative = false
+position = Vector2(-910, -552)
+scale = Vector2(2, 2)
+texture = ExtResource("8_gn8l5")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1714105430]
+position = Vector2(576, 324)
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
+
+[node name="Player" parent="." unique_id=1816060458 instance=ExtResource("1_js7pq")]
+z_as_relative = false
+position = Vector2(183, 499)
+time_to_jump_apex = 0.4
+time_jump_descent = 0.3
+
+[node name="GameManager" type="Node" parent="." unique_id=551095823 node_paths=PackedStringArray("parallax_bg_sprites")]
+script = ExtResource("5_p1v5b")
+speed_delta = 1.5
+master_scale = 2.0
+parallax_bg_sprites = [NodePath("../Ground/Floor/Ground"), NodePath("../Ground/Floor/Ground2"), NodePath("../Ground/Floor/Ground3"), NodePath("../Ground/BG Layer 2/BG 2_1"), NodePath("../Ground/BG Layer 2/BG 2_2"), NodePath("../Ground/BG Layer 2/BG 2_3"), NodePath("../Ground/BG Layer 3/BG 3_1"), NodePath("../Ground/BG Layer 3/BG 3_2"), NodePath("../Ground/BG Layer 3/BG 3_3"), NodePath("../Ground/BG Layer 4/BG 4_1"), NodePath("../Ground/BG Layer 4/BG 4_2"), NodePath("../Ground/BG Layer 4/BG 4_3"), NodePath("../Ground/BG Layer 4/BG Clouds 1"), NodePath("../Ground/BG Layer 4/BG Clouds 2"), NodePath("../Ground/BG Layer 4/BG Clouds 3"), NodePath("../Ground/Foreground/FG1"), NodePath("../Ground/Foreground/FG2"), NodePath("../Ground/Foreground/FG3")]
+
+[node name="ObjectSpawner" type="Node2D" parent="GameManager" unique_id=608752736 node_paths=PackedStringArray("game_manager", "spawnable_pool")]
+position = Vector2(1242, 531)
+script = ExtResource("6_bah7m")
+game_manager = NodePath("..")
+spawnable_stats_array = Array[ExtResource("13_sjtuv")]([ExtResource("14_5j71u"), ExtResource("15_jyqkj"), ExtResource("16_ydbc3"), ExtResource("17_aj1ai"), ExtResource("18_d7dfr"), ExtResource("19_c2gv2"), ExtResource("14_5j71u"), ExtResource("19_c2gv2"), ExtResource("20_jyqkj")])
+spawnable_pool = [NodePath("Spawnable"), NodePath("Spawnable2"), NodePath("Spawnable3"), NodePath("Spawnable4"), NodePath("Spawnable5"), NodePath("Spawnable6")]
+
+[node name="SpawnTimer" type="Timer" parent="GameManager/ObjectSpawner" unique_id=241757932]
+autostart = true
+ignore_time_scale = true
+
+[node name="Spawnable" parent="GameManager/ObjectSpawner" unique_id=1114197574 instance=ExtResource("16_0to5b")]
+
+[node name="Spawnable2" parent="GameManager/ObjectSpawner" unique_id=1459240221 instance=ExtResource("16_0to5b")]
+
+[node name="Spawnable3" parent="GameManager/ObjectSpawner" unique_id=606574328 instance=ExtResource("16_0to5b")]
+
+[node name="Spawnable4" parent="GameManager/ObjectSpawner" unique_id=1268925763 instance=ExtResource("16_0to5b")]
+
+[node name="Spawnable5" parent="GameManager/ObjectSpawner" unique_id=1955495950 instance=ExtResource("16_0to5b")]
+
+[node name="Spawnable6" parent="GameManager/ObjectSpawner" unique_id=729975274 instance=ExtResource("16_0to5b")]
+
+[node name="Spawnable7" parent="GameManager/ObjectSpawner" unique_id=1628923762 instance=ExtResource("16_0to5b")]
+
+[node name="Spawnable8" parent="GameManager/ObjectSpawner" unique_id=1010076613 instance=ExtResource("16_0to5b")]
+
+[node name="Spawnable9" parent="GameManager/ObjectSpawner" unique_id=1624092902 instance=ExtResource("16_0to5b")]
+
+[node name="Spawnable10" parent="GameManager/ObjectSpawner" unique_id=1916279387 instance=ExtResource("16_0to5b")]
+
+[node name="ObstacleDeactivationZone" type="Area2D" parent="." unique_id=682644153]
+position = Vector2(-50, 0)
+collision_layer = 9
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleDeactivationZone" unique_id=781899238]
+position = Vector2(-32, 281)
+shape = SubResource("RectangleShape2D_bah7m")
+
+[node name="HUD" parent="." unique_id=395229016 instance=ExtResource("10_fvag4")]
+z_index = 10
+
+[connection signal="hp_loss" from="Player" to="HUD" method="_on_player_hp_loss"]
+[connection signal="kill" from="Player" to="GameManager" method="_on_player_kill"]
+[connection signal="pickup" from="Player" to="GameManager" method="_on_player_pickup"]
+[connection signal="energy_changed" from="GameManager" to="HUD" method="_on_game_manager_energy_changed"]
+[connection signal="game_is_over" from="GameManager" to="HUD" method="show_game_over_screen"]
+[connection signal="game_speed_changed" from="GameManager" to="Player" method="change_animation_speed"]
+[connection signal="game_speed_changed" from="GameManager" to="HUD" method="_on_game_manager_game_speed_changed"]
+[connection signal="update_game_score" from="GameManager" to="HUD" method="_on_game_manager_update_game_score"]
+[connection signal="timeout" from="GameManager/ObjectSpawner/SpawnTimer" to="GameManager/ObjectSpawner" method="_spawn"]

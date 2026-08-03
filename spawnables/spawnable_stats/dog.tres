@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SpawnableStats" format=3 uid="uid://dm8jalwp2yipl"]
+
+[ext_resource type="Script" uid="uid://go061rng8fge" path="res://spawnables/spawnable_stats.gd" id="1_ffa4h"]
+[ext_resource type="SpriteFrames" uid="uid://5kb3txctn6ns" path="res://graphics/Graphics/Dog.tres" id="2_esb11"]
+
+[resource]
+script = ExtResource("1_ffa4h")
+score_bonus = 0
+energy = 0
+obstacle = true
+movement_speed = 600.0
+sprite = ExtResource("2_esb11")
+metadata/_custom_type_script = "uid://go061rng8fge"

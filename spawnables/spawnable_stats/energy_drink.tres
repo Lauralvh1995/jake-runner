@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SpawnableStats" format=3 uid="uid://bpqld7fdu3rnu"]
+
+[ext_resource type="Script" uid="uid://go061rng8fge" path="res://spawnables/spawnable_stats.gd" id="1_iart4"]
+[ext_resource type="SpriteFrames" uid="uid://dciqr6jbpv6f3" path="res://graphics/Graphics/energydrink.tres" id="2_8h1s8"]
+
+[resource]
+script = ExtResource("1_iart4")
+score_bonus = -20
+energy = 20
+obstacle = true
+sprite = ExtResource("2_8h1s8")
+metadata/_custom_type_script = "uid://go061rng8fge"

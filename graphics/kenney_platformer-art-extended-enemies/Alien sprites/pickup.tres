@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://fkyqn16x5nkw"]
+
+[ext_resource type="Texture2D" uid="uid://cgjasqj870ygs" path="res://graphics/kenney_platformer-art-extended-enemies/Alien sprites/alienGreen_badge1.png" id="1_qal00"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qal00")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]

@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bhfvkheja1bw1"]
+
+[ext_resource type="Texture2D" uid="uid://ceslkjcpgbm2n" path="res://graphics/Graphics/WaterBottle.png" id="1_g1qaw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dydpk"]
+atlas = ExtResource("1_g1qaw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nej0t"]
+atlas = ExtResource("1_g1qaw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anyr3"]
+atlas = ExtResource("1_g1qaw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gugmh"]
+atlas = ExtResource("1_g1qaw")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dydpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nej0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anyr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gugmh")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
